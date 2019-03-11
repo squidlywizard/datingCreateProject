@@ -10,6 +10,7 @@ public class datingFrame extends JFrame
 	private datingController appController;
 	private datingPanel appPanel;
 	
+	
 	public datingFrame(datingController appController) 
 	{
 		super();
@@ -24,7 +25,7 @@ public class datingFrame extends JFrame
 	{
 		this.setContentPane(appPanel);
 		this.setSize(600, 971);
-		this.setTitle("clothes on back, shoes on my feet");
+		this.setTitle("");
 		this.setResizable(false);
 		this.setVisible(true);
 	}
