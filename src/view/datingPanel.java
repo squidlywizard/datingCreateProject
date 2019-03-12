@@ -13,7 +13,7 @@ public class datingPanel extends JPanel
 private JButton yes;
 private JButton no;
 private JTextField dates;
-private ImageIcon tiffany;
+private ImageIcon demi;
 	public datingPanel(datingController appController) {
 		super();
 	
