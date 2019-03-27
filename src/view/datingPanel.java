@@ -1,5 +1,6 @@
 package view;
 
+import java.awt.Panel;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import view.image.*;
@@ -17,13 +18,23 @@ private JButton no;
 private JButton next;
 private JTextField dates;
 private ImageIcon demi;
+private SpringLayout Layout;
 	public datingPanel(datingController appController) {
 		super();
-	yes = new JButton ("y-yes");
-	no = new JButton("n-no");
-	next = new JButton("next");
-	dates = new JTextField("im odea, im looking for love", 600);
+		this.Layout = new SpringLayout();
 	demi = new ImageIcon(getClass().getResource("/view/image/demiFinal.png"));
+	yes = new JButton ("y-yes");
+	Layout.putConstraint(SpringLayout.WEST, yes, 127, SpringLayout.WEST, this);
+	no = new JButton("n-no");
+	Layout.putConstraint(SpringLayout.NORTH, yes, 0, SpringLayout.NORTH, no);
+	Layout.putConstraint(SpringLayout.NORTH, no, 249, SpringLayout.NORTH, this);
+	Layout.putConstraint(SpringLayout.EAST, no, -153, SpringLayout.EAST, this);
+	next = new JButton("next");
+	dates = new JTextField("im odea", 40);
+	Layout.putConstraint(SpringLayout.SOUTH, dates, -55, SpringLayout.SOUTH, this);
+	Layout.putConstraint(SpringLayout.EAST, dates, -53, SpringLayout.EAST, this);
+	dates.setEditable(false);
+	
 	
 
 	
@@ -33,10 +44,13 @@ private ImageIcon demi;
 
  public void setupPanel()
  {
+	 this.setLayout(Layout);
 	this.add(yes);
 	this.add(no);
 	this.add(next);
 	this.add(dates);
+	
+	
 	
 	
  }
