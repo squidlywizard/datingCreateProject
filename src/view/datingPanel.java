@@ -22,17 +22,16 @@ private SpringLayout Layout;
 	public datingPanel(datingController appController) {
 		super();
 		this.Layout = new SpringLayout();
-	demi = new ImageIcon(getClass().getResource("/view/image/demiFinal.png"));
+	demi = new ImageIcon(getClass().getResource("/view/image/23771.jpg"));
 	yes = new JButton ("y-yes");
-	Layout.putConstraint(SpringLayout.WEST, yes, 127, SpringLayout.WEST, this);
+	
 	no = new JButton("n-no");
-	Layout.putConstraint(SpringLayout.NORTH, yes, 0, SpringLayout.NORTH, no);
-	Layout.putConstraint(SpringLayout.NORTH, no, 249, SpringLayout.NORTH, this);
-	Layout.putConstraint(SpringLayout.EAST, no, -153, SpringLayout.EAST, this);
+	yes.setVisible(false);
+	no.setVisible(false);
+	
 	next = new JButton("next");
 	dates = new JTextField("im odea", 40);
-	Layout.putConstraint(SpringLayout.SOUTH, dates, -55, SpringLayout.SOUTH, this);
-	Layout.putConstraint(SpringLayout.EAST, dates, -53, SpringLayout.EAST, this);
+	
 	dates.setEditable(false);
 	
 	
@@ -55,8 +54,12 @@ private SpringLayout Layout;
 	
  }
  public void setupLayout()
- {
-	
+ {  Layout.putConstraint(SpringLayout.WEST, yes, 127, SpringLayout.WEST, this);
+	Layout.putConstraint(SpringLayout.SOUTH, dates, -55, SpringLayout.SOUTH, this);
+	Layout.putConstraint(SpringLayout.EAST, dates, -53, SpringLayout.EAST, this);
+	Layout.putConstraint(SpringLayout.NORTH, yes, 0, SpringLayout.NORTH, no);
+	Layout.putConstraint(SpringLayout.NORTH, no, 249, SpringLayout.NORTH, this);
+	Layout.putConstraint(SpringLayout.EAST, no, -153, SpringLayout.EAST, this);
  }
  public void setupListeners()
  {
