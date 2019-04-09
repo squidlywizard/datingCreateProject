@@ -1,9 +1,11 @@
 package view;
 
+
 import java.awt.Panel;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import view.image.*;
+
 
 
 import javax.swing.*;
@@ -12,27 +14,35 @@ import controller.datingController;
 
 public class datingPanel extends JPanel 
 {
+private datingController app;
 
 private JButton yes;
 private JButton no;
 private JButton next;
 private JTextField dates;
+
 private ImageIcon demi;
+
 private SpringLayout Layout;
+
 	public datingPanel(datingController appController) {
 		super();
+		this.app = app;
 		this.Layout = new SpringLayout();
-	demi = new ImageIcon(getClass().getResource("/view/image/23771.jpg"));
-	yes = new JButton ("y-yes");
+	    this.demi = new ImageIcon(getClass().getResource("/view/image/demi.jpeg"));
+	    
+	    yes = new JButton ("y-yes");
 	
-	no = new JButton("n-no");
-	yes.setVisible(false);
-	no.setVisible(false);
 	
-	next = new JButton("next");
-	dates = new JTextField("im odea", 40);
+	    
+	    no = new JButton("n-no");
+	    yes.setVisible(false);
+	    no.setVisible(false);
 	
-	dates.setEditable(false);
+	
+	    next = new JButton("next");
+	    dates = new JTextField("im odea", 40);
+	    dates.setEditable(false);
 	
 	
 
@@ -48,6 +58,7 @@ private SpringLayout Layout;
 	this.add(no);
 	this.add(next);
 	this.add(dates);
+	
 	
 	
 	
