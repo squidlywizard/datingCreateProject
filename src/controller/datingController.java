@@ -13,8 +13,8 @@ public class datingController
 
 	public void start()
 	{
-		name = JOptionPane.showInputDialog(null, "what is your name?");
-		System.out.println(name);
+		//name = JOptionPane.showInputDialog(null, "what is your name?");
+		//System.out.println(name);
 	
 		this.appFrame = new datingFrame(this);
 	}
