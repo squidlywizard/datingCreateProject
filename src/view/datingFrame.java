@@ -3,7 +3,7 @@ package view;
 import javax.swing.JFrame;
 
 import controller.datingController;
-import view.datingPanel;
+//import view.datingPanel;
 
 public class datingFrame extends JFrame
 {
@@ -25,7 +25,7 @@ public class datingFrame extends JFrame
 	{
 		this.setContentPane(appPanel);
 		this.setSize(600, 971);
-		this.setTitle("");
+		this.setTitle("The Dating Game");
 		this.setResizable(false);
 		this.setVisible(true);
 	}

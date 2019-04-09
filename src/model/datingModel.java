@@ -26,6 +26,7 @@ private String[] response;
 	   response[1]= "I will wait for you";
 	   response[2]= "ha creep";
 	   response[3]= "OH are you to good for me then?";
+	   response[4]= "do you love me?";
 	   
 	   
    }

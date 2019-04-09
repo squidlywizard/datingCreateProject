@@ -31,17 +31,13 @@ private SpringLayout Layout;
 		this.Layout = new SpringLayout();
 	    this.demi = new ImageIcon(getClass().getResource("/view/image/demi.jpeg"));
 	    
-	    yes = new JButton ("y-yes");
-	
-	
-	    
+	    yes = new JButton ("y-yes");	    
 	    no = new JButton("n-no");
-	    yes.setVisible(false);
-	    no.setVisible(false);
+	   
 	
 	
 	    next = new JButton("next");
-	    dates = new JTextField("im odea", 40);
+	    dates = new JTextField("im taylor do love me?", 40);
 	    dates.setEditable(false);
 	
 	
