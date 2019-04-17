@@ -21,6 +21,8 @@ private JButton yes;
 private JButton no;
 private JButton next;
 private JTextField dates;
+private int diaolog;
+private String name;
 
 private ImageIcon demi;
 
@@ -28,7 +30,7 @@ private SpringLayout Layout;
 
 	public datingPanel(datingController appController) {
 		super();
-		this.app = app;
+		this.app = appController;
 		this.Layout = new SpringLayout();
 	    this.demi = new ImageIcon(getClass().getResource("/view/image/demi.jpeg"));
 	    
@@ -41,7 +43,7 @@ private SpringLayout Layout;
 	    imageLabel.setIcon(demi);
 	
 	    next = new JButton("next");
-	    dates = new JTextField("im taylor do love me?", 40);
+	    dates = new JTextField("im taylor, who are you?", 40);
 	
 	    dates.setEditable(false);
 	
@@ -63,6 +65,7 @@ private SpringLayout Layout;
 	imageLabel.setVerticalTextPosition(JLabel.BOTTOM);
 	imageLabel.setHorizontalTextPosition(JLabel.CENTER);
 	
+	diaolog = 0;
 	
 	
 	
@@ -83,6 +86,66 @@ private SpringLayout Layout;
  }
  public void setupListeners()
  {
+		next.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent mouseClick)
+			{
+				if (diaolog == 0)
+				{
+					 name = JOptionPane.showInputDialog(null, "what is your name?");
+					dates.setText(app.getspeech(4));
+					
+					diaolog ++;
+				}
+				if (diaolog == 1)
+				{
+					no.setVisible(true);
+					yes.setVisible(true);
+					next.setVisible(false);
+		
+				}
+			}
+			
+		});
+		no.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent mouseClick)
+			{
+				if(app.isWorthy(name))
+				{
+					dates.setText(app.getspeech(1));
+				}else
+				{
+					dates.setText(app.getspeech(3));
+				}
+				
+				no.setVisible(false);
+				yes.setVisible(false);
+
+			}
+			
+		});
+		yes.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent mouseClick)
+			{
+				if(app.isWorthy(name))
+				{
+					dates.setText(app.getspeech(0));
+				}
+				else
+				{
+					dates.setText(app.getspeech(2));
+				}
+				
+				no.setVisible(false);
+				yes.setVisible(false);
+
+			}
+			
+		});
+			
 	
  }
+
 }
